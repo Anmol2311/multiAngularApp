@@ -1,0 +1,39 @@
+* Combine multiple angular app into single one:
+
+ng new mainApp
+ng generate application admin --routing
+
+main app
+sub app
+
+ng serve // main
+ng serve --project=admin
+
+@NgModule({})
+export class AdminSharedModule{
+static forRoot(): ModuleWithProviders {
+return {
+ngModule: AppModule,
+providers: []
+}
+}
+}
+
+inject the above class in main app.module
+
+
+ng generate component view1 --project=admin
+ng generate component view2 --project=admin
+ng generate component nav --project=admin
+
+set routing in for sub app
+
+set routing for main app with lazyloading
+
+import both sharedmodule inside main routing
+
+create nav for main app
+& add in app.component
+run main app
+
+Reference: https://medium.com/disney-streaming/combining-multiple-angular-applications-into-a-single-one-e87d530d6527
